@@ -1,4 +1,3 @@
-<!-- index.html -->
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -6,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Poem Generator</title>
     <link rel="stylesheet" href="style/style.css" />
-    <!-- Add Font Awesome for the search icon -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
@@ -14,7 +12,12 @@
   </head>
   <body>
     <div class="container">
-      <h1>Poem Generator</h1>
+      <div class="header">
+        <h1>Poem Generator</h1>
+        <div class="poem-icon">
+          <i class="fas fa-feather-alt"></i>
+        </div>
+      </div>
       <div class="search-container">
         <div class="search-bar">
           <i class="fas fa-search search-icon"></i>
@@ -28,7 +31,11 @@
       </div>
       <div id="poemDisplay"></div>
       <p class="footer">Coded with ❤️ by Mmathabo Mphahlele</p>
+      <a href="https://github.com/MmathaboM/Poem-Generator" target="_blank">
+        Open-sourced on GitHub
+      </a>
     </div>
+
     <script src="src/index.js"></script>
   </body>
 </html>
