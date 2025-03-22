@@ -1,0 +1,23 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Poem Generator</title>
+    <link rel="stylesheet" href="style/style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Poem Generator</h1>
+      <div class="search-container">
+        <input type="text" id="titleInput" placeholder="Enter poem title..." />
+        <button onclick="fetchPoem()">Generate Poem</button>
+      </div>
+      <div id="loading" class="hidden">⏳ Loading...</div>
+      <div id="poemDisplay"></div>
+      <p class="footer">Coded with ❤️ by Mmathabo Mphahlele</p>
+    </div>
+    <script src="src/index.js"></script>
+  </body>
+</html>
