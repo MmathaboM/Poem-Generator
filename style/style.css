@@ -1,75 +1,103 @@
 body {
-    font-family: Arial, sans-serif;
-    text-align: center;
-    margin: 50px;
-    background-color: #f4f4f4;
-  }
-  
-  .container {
-    background: white;
-    padding: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    width: 50%;
-    margin: auto;
-    border-radius: 10px;
-  }
-  
-  .search-container {
-    display: flex;
-    justify-content: center;
-    margin: 20px 0;
-  }
-  
-  .search-bar {
-    display: flex;
-    align-items: center;
-    background-color: #ffebee; /* Light pink background like in the image */
-    border-radius: 30px;
-    padding: 5px 15px;
-    width: 80%;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  }
-  
-  .search-icon {
-    color: #555;
-    margin-right: 10px;
-    font-size: 16px;
-  }
-  
-  input {
-    flex: 1;
-    padding: 10px;
-    border: none;
-    background: transparent;
-    outline: none;
-    font-size: 14px;
-  }
-  
-  button {
-    padding: 8px 15px;
-    background: #ff7a8c; /* Pink button to match the theme */
-    color: white;
-    border: none;
-    border-radius: 20px;
-    cursor: pointer;
-    font-weight: bold;
-    margin-left: 10px;
-  }
-  
-  button:hover {
-    background: #ff5c7a;
-  }
-  
-  #poemDisplay {
-    margin-top: 20px;
-    white-space: pre-line;
-    font-style: italic;
-    text-align: left;
-    padding: 15px;
-  }
-  
-  .footer {
-    margin-top: 20px;
-    font-size: 14px;
-    color: #777;
-  }
+  font-family: Arial, sans-serif;
+  text-align: center;
+  margin: 50px;
+  background-color: #f4f4f4;
+}
+
+.container {
+  background: white;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 50%;
+  margin: auto;
+  border-radius: 10px;
+  position: relative;
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.poem-icon {
+  position: absolute;
+  right: 0;
+  top: 0;
+  background-color: #ffebee;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.poem-icon i {
+  color: #ff7a8c;
+  font-size: 20px;
+}
+
+.search-container {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.search-bar {
+  display: flex;
+  align-items: center;
+  background-color: #ffebee;
+  border-radius: 30px;
+  padding: 5px 15px;
+  width: 80%;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.search-icon {
+  color: #555;
+  margin-right: 10px;
+  font-size: 16px;
+}
+
+input {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  background: transparent;
+  outline: none;
+  font-size: 14px;
+}
+
+button {
+  padding: 8px 15px;
+  background: #ff7a8c;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: bold;
+  margin-left: 10px;
+}
+
+button:hover {
+  background: #ff5c7a;
+}
+
+#poemDisplay {
+  margin-top: 20px;
+  white-space: pre-line;
+  font-style: italic;
+  text-align: left;
+  padding: 15px;
+}
+
+.footer {
+  margin-top: 20px;
+  font-size: 14px;
+  color: #777;
+}

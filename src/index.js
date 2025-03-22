@@ -9,24 +9,21 @@ document.addEventListener("DOMContentLoaded", function () {
     const poemDisplay = document.getElementById("poemDisplay");
     poemDisplay.innerText = "";
 
-    // Create loading indicator dynamically
     let loadingIndicator = document.getElementById("loading");
     if (!loadingIndicator) {
       loadingIndicator = document.createElement("div");
       loadingIndicator.id = "loading";
       loadingIndicator.innerText = "⏳ Loading...";
       loadingIndicator.className = "loading";
-      // Insert the loading indicator before the poemDisplay
       poemDisplay.parentNode.insertBefore(loadingIndicator, poemDisplay);
     } else {
-      // If it already exists, just make sure it's visible
       loadingIndicator.classList.remove("hidden");
     }
 
     fetch(`https://poetrydb.org/title/${title}`)
       .then((response) => response.json())
       .then((data) => {
-        // Remove loading indicator after data is received
+       
         if (loadingIndicator) {
           loadingIndicator.remove();
         }
@@ -39,7 +36,6 @@ document.addEventListener("DOMContentLoaded", function () {
         }
       })
       .catch((error) => {
-        // Remove loading indicator if there's an error
         if (loadingIndicator) {
           loadingIndicator.remove();
         }
