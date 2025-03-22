@@ -5,17 +5,33 @@ document.addEventListener("DOMContentLoaded", function () {
       alert("Please enter a title.");
       return;
     }
-    const loadingIndicator = document.getElementById("loading");
-    const poemDisplay = document.getElementById("poemDisplay");
 
-    loadingIndicator.classList.remove("hidden");
+    const poemDisplay = document.getElementById("poemDisplay");
     poemDisplay.innerText = "";
+
+    // Create loading indicator dynamically
+    let loadingIndicator = document.getElementById("loading");
+    if (!loadingIndicator) {
+      loadingIndicator = document.createElement("div");
+      loadingIndicator.id = "loading";
+      loadingIndicator.innerText = "⏳ Loading...";
+      loadingIndicator.className = "loading";
+      // Insert the loading indicator before the poemDisplay
+      poemDisplay.parentNode.insertBefore(loadingIndicator, poemDisplay);
+    } else {
+      // If it already exists, just make sure it's visible
+      loadingIndicator.classList.remove("hidden");
+    }
 
     fetch(`https://poetrydb.org/title/${title}`)
       .then((response) => response.json())
       .then((data) => {
-        loadingIndicator.classList.add("hidden");
-        if (data.status === 404) {
+        // Remove loading indicator after data is received
+        if (loadingIndicator) {
+          loadingIndicator.remove();
+        }
+
+        if (data.status === 404 || data.length === 0) {
           poemDisplay.innerText = "No poem found for this title.";
         } else {
           const poem = data[0].lines.join("\n");
@@ -23,7 +39,11 @@ document.addEventListener("DOMContentLoaded", function () {
         }
       })
       .catch((error) => {
-        loadingIndicator.classList.add("hidden");
+        // Remove loading indicator if there's an error
+        if (loadingIndicator) {
+          loadingIndicator.remove();
+        }
+
         console.error("Error fetching poem:", error);
         poemDisplay.innerText = "An error occurred while fetching the poem.";
       });
